@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#536DFE"
+    android:onClick="passReset"
+    tools:context=".EntryPage">
+
+    <Button
+        android:id="@+id/passreset_button"
+        android:layout_width="153dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="120dp"
+        android:backgroundTint="#F19B1A"
+        android:text="Sifremi Unuttum"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="430dp" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="136dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="#F19B1A"
+        android:onClick="login"
+        android:text="Giris Yap"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="330dp" />
+
+    <EditText
+        android:id="@+id/username_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:inputType="text"
+        android:shadowColor="#F19B1A"
+        android:textColor="#F19B1A"
+        android:textColorHighlight="#F19B1A"
+        android:textColorHint="#F19B1A"
+        android:textColorLink="#F19B1A"
+        app:layout_constraintBaseline_toBaselineOf="@+id/usernameLabel"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/usernameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kullanici Adi:"
+        android:textAlignment="center"
+        android:textColor="#F19B1A"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.287" />
+
+    <EditText
+        android:id="@+id/password_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:shadowColor="#F19B1A"
+        android:textColor="#F19B1A"
+        android:textColorHighlight="#F19B1A"
+        android:textColorHint="#F19B1A"
+        android:textColorLink="#F19B1A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username_text" />
+
+    <TextView
+        android:id="@+id/passwordLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sifre:"
+        android:textAlignment="center"
+        android:textColor="#F19B1A"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39" />
+
+    <TextView
+        android:id="@+id/unichatLabel"
+        android:layout_width="234dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="225dp"
+        android:fontFamily="@font/aladin"
+        android:singleLine="false"
+        android:text="UNICHAT"
+        android:textAlignment="center"
+        android:textColor="#F19B1A"
+        android:textSize="58sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/signup_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/signup_button"
+        android:layout_width="136dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="50dp"
+        android:backgroundTint="#F19B1A"
+        android:onClick="signUp"
+        android:text="Kayit Ol"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="330dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
