@@ -21,7 +21,7 @@ class RecyclerAdapter(val postlist : ArrayList<Int>) : RecyclerView.Adapter<Recy
     }
 
     override fun getItemCount(): Int {
-
+            return postlist.size
     }
 
     override fun onBindViewHolder(holder: PostsVH, position: Int) {
