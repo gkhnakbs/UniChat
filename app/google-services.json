@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "910790574044",
+    "project_id": "unichat-bcb93",
+    "storage_bucket": "unichat-bcb93.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910790574044:android:5dd9cd8c84bac521c59919",
+        "android_client_info": {
+          "package_name": "com.gokhanakbas.unichatdeneme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910790574044-4omkca8665k7jjaj7pt9ag5hogdbbie8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhfxGmMCKjd1-xGRQvx7kghWcbLvP5THA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910790574044-4omkca8665k7jjaj7pt9ag5hogdbbie8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
