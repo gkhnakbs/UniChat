@@ -8,36 +8,10 @@
     android:onClick="passReset"
     tools:context=".EntryPage">
 
-    <Button
-        android:id="@+id/passreset_button"
-        android:layout_width="153dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="120dp"
-        android:backgroundTint="#F19B1A"
-        android:text="Sifremi Unuttum"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="430dp" />
-
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="136dp"
-        android:layout_height="62dp"
-        android:layout_marginEnd="50dp"
-        android:backgroundTint="#F19B1A"
-        android:onClick="login"
-        android:text="Giris Yap"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="330dp" />
-
     <EditText
-        android:id="@+id/username_text"
+        android:id="@+id/usermail_Text"
         android:layout_width="210dp"
         android:layout_height="41dp"
-        android:layout_marginEnd="20dp"
         android:ems="10"
         android:inputType="text"
         android:shadowColor="#F19B1A"
@@ -45,15 +19,50 @@
         android:textColorHighlight="#F19B1A"
         android:textColorHint="#F19B1A"
         android:textColorLink="#F19B1A"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="171dp" />
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.304" />
+
+    <Button
+        android:id="@+id/passreset_button"
+        android:layout_width="153dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="144dp"
+        android:backgroundTint="#F19B1A"
+        android:text="Sifremi Unuttum"
+        android:textColor="@android:color/system_neutral1_800"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="136dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="268dp"
+        android:backgroundTint="#F19B1A"
+        android:onClick="login"
+        android:text="Giris Yap"
+        android:textColor="@android:color/system_neutral1_800"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/usernameLabel"
         android:layout_width="130dp"
         android:layout_height="38dp"
+        android:clickable="false"
         android:fontFamily="@font/aladin"
-        android:text="Kullanici Adi:"
+        android:text="Email :"
         android:textAlignment="center"
         android:textColor="#F19B1A"
         android:textSize="28sp"
@@ -63,28 +72,13 @@
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.273" />
-
-    <EditText
-        android:id="@+id/password_text"
-        android:layout_width="210dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:inputType="text"
-        android:shadowColor="#F19B1A"
-        android:textColor="#F19B1A"
-        android:textColorHighlight="#F19B1A"
-        android:textColorHint="#F19B1A"
-        android:textColorLink="#F19B1A"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_text" />
+        app:layout_constraintVertical_bias="0.309" />
 
     <TextView
         android:id="@+id/passwordLabel"
         android:layout_width="86dp"
         android:layout_height="38dp"
+        android:clickable="false"
         android:fontFamily="@font/aladin"
         android:text="Sifre:"
         android:textAlignment="center"
@@ -96,7 +90,27 @@
         app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.373" />
+        app:layout_constraintVertical_bias="0.409" />
+
+    <EditText
+        android:id="@+id/password_text"
+        android:layout_width="210dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:shadowColor="#F19B1A"
+        android:textColor="#F19B1A"
+        android:textColorHighlight="#F19B1A"
+        android:textColorHint="#F19B1A"
+        android:textColorLink="#F19B1A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toEndOf="@+id/passwordLabel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.404" />
 
     <TextView
         android:id="@+id/unichatLabel"
@@ -113,20 +127,24 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/signup_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/signup_button"
         android:layout_width="136dp"
         android:layout_height="62dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="268dp"
         android:backgroundTint="#F19B1A"
         android:onClick="signUp"
         android:text="Kayit Ol"
-        android:textColor="#000000"
+        android:textColor="@android:color/system_neutral1_800"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="330dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
