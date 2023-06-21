@@ -7,15 +7,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gokhanakbas.unichatdeneme.databinding.RecyclerViewItemBinding
 import java.util.ArrayList
 
-class RecyclerAdapter(val postlist : ArrayList<Int>) : RecyclerView.Adapter<RecyclerAdapter.PostsVH>() {
+class RecyclerAdapter(var postlist : ArrayList<Posts>) : RecyclerView.Adapter<RecyclerAdapter.PostsVH>() {
     //Burada post list i postlarin id sini yazariz diye dusundum.
-    private lateinit var binding : RecyclerViewItemBinding
-    class PostsVH(val itemBinding: RecyclerViewItemBinding) : RecyclerView.ViewHolder(itemBinding.root) {
+    //private lateinit var binding : RecyclerViewItemBinding
+    class PostsVH(var itemBinding: RecyclerViewItemBinding) : RecyclerView.ViewHolder(itemBinding.root) {
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostsVH {
-        val itemBinding= RecyclerViewItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        var itemBinding= RecyclerViewItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         // Burada satir goruntusunu baglamis olduk.
         return PostsVH(itemBinding)
     }
@@ -26,7 +26,10 @@ class RecyclerAdapter(val postlist : ArrayList<Int>) : RecyclerView.Adapter<Recy
 
     override fun onBindViewHolder(holder: PostsVH, position: Int) {
 
-        holder.itemBinding
+        holder.itemBinding.postTime.text=postlist[position].postTime
+        holder.itemBinding.postDetails.text=postlist[position].postDesc
+        holder.itemBinding.postUsername.text=postlist[position].postFullName
+
     }
 
 }
