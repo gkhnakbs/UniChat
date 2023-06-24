@@ -16,6 +16,7 @@ class MainPage : AppCompatActivity() {
         binding= ActivityMainpageBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+         var user_mail=intent.getStringExtra("user_mail")
          var user_post : Posts= Posts("gkhn.akbs5050@gmail.com")
          user_post.getPostSelf(this)
          recyclerViewAdapter= RecyclerAdapter(user_post.postList)

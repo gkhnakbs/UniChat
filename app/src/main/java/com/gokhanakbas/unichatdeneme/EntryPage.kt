@@ -16,6 +16,7 @@ class EntryPage : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
 
         binding=ActivityEntrypageBinding.inflate(layoutInflater)
@@ -24,15 +25,12 @@ class EntryPage : AppCompatActivity() {
 
         auth=FirebaseAuth.getInstance()
 
-        val guncelKullanici=auth.currentUser
-        if(guncelKullanici!=null){
+        if(auth.currentUser!=null){
             val intent = Intent(this,MainPage::class.java)
             intent.putExtra("user_mail",auth.currentUser?.email.toString())
             startActivity(intent)
             finish()
         }
-
-
 
     }
 
