@@ -35,8 +35,9 @@ class EntryPage : AppCompatActivity() {
     }
 
     fun login(view : View){
-        var user_mailText =binding.usermailText.text.toString().trim()
-        var passwordText =binding.passwordText.text.toString().trim()
+        var user_mailText =binding.usermailText.text.toString()
+        var passwordText =binding.passwordText.text.toString()
+        println(user_mailText +"<-  Helloo ->" +passwordText)
 
         if (user_mailText != "" && passwordText != ""){
             auth.signInWithEmailAndPassword(user_mailText,passwordText).addOnCompleteListener {
@@ -50,7 +51,7 @@ class EntryPage : AppCompatActivity() {
             }
         }
         else{
-            Toast.makeText(this.applicationContext,"There are empty fields",Toast.LENGTH_LONG).show()
+            Toast.makeText(this.applicationContext,"Bos Alanlar Var",Toast.LENGTH_LONG).show()
         }
 
 
