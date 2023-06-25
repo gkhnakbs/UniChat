@@ -11,10 +11,10 @@
         android:layout_height="574dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.811"
+        app:layout_constraintVertical_bias="0.952"
         tools:itemCount="20"
         tools:listitem="@layout/recycler_view_item" />
 
@@ -22,12 +22,14 @@
         android:id="@+id/unichatLabelMainPage"
         android:layout_width="227dp"
         android:layout_height="58dp"
-        android:layout_marginTop="4dp"
         android:fontFamily="@font/aladin"
         android:text="UNICHAT"
+        android:textAlignment="center"
         android:textColor="#F19B1A"
         android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.016" />
 </androidx.constraintlayout.widget.ConstraintLayout>

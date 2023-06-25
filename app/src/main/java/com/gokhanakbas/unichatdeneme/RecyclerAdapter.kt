@@ -8,7 +8,6 @@ import kotlin.collections.ArrayList
 
 class RecyclerAdapter(val postlist: ArrayList<Posts>) : RecyclerView.Adapter<RecyclerAdapter.PostsVH>() {
     //Burada post list i postlarin id sini yazariz diye dusundum.
-    private lateinit var binding : RecyclerViewItemBinding
     class PostsVH(val itemBinding: RecyclerViewItemBinding) : RecyclerView.ViewHolder(itemBinding.root) {
 
     }
@@ -26,8 +25,8 @@ class RecyclerAdapter(val postlist: ArrayList<Posts>) : RecyclerView.Adapter<Rec
     override fun onBindViewHolder(holder: PostsVH, position: Int) {
 
         holder.itemBinding.postDetails.text= postlist[position].postDesc
-        holder.itemBinding.postTime.text= postlist[position].postTime
-        holder.itemBinding.postUsername.text= postlist[position].postFullName
+        holder.itemBinding.postTime.text= postlist[position].postTime.substring(11)
+        holder.itemBinding.postLabel.text= postlist[position].postLabel
     }
 
 }

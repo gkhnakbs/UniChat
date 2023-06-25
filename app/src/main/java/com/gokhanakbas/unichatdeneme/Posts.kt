@@ -4,8 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import kotlin.collections.ArrayList
 
 class Posts(var postUser : String) {
@@ -19,23 +17,17 @@ class Posts(var postUser : String) {
         var postFullName : String=""
         private var firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
-        var postList=ArrayList<Posts>()
 
-        @SuppressLint("NotifyDataSetChanged")
-        fun getPostSelf(context: Context){
-            var recyclerAdapter : RecyclerAdapter
+        val postList = ArrayList<Posts>()
+
+    /*fun getPostSelf(context: Context){
+
             //Buraya Firestore dan kullanıcıya ait postları çekeceğiz.
-            runBlocking {
-                launch {
+
                     firestore.collection("Posts").whereEqualTo("post_mail", postUser)
                         .addSnapshotListener { snapshot, exception ->
-
                             if (exception != null) {
-                                Toast.makeText(
-                                    context,
-                                    exception.localizedMessage,
-                                    Toast.LENGTH_LONG
-                                ).show()
+                                Toast.makeText(context,exception.localizedMessage,Toast.LENGTH_LONG).show()
                             } else {
                                 if (snapshot != null) {
                                     if (!snapshot.isEmpty) {
@@ -45,30 +37,29 @@ class Posts(var postUser : String) {
 
                                         for (document in documents) {
                                             var postObject = Posts(postUser)
-                                            postObject.postLabel =
-                                                document.get("post_label") as String
-                                            postObject.postDesc =
-                                                document.get("post_desc") as String
-                                            postObject.postTime =
-                                                document.get("post_time") as String
-                                            postObject.postFullName =
-                                                document.get("post_FullName") as String
+                                            postObject.postLabel =document.get("post_label") as String
+                                            postObject.postDesc =document.get("post_desc") as String
+                                            postObject.postTime =document.get("post_time") as String
+                                            postObject.postFullName =document.get("post_FullName") as String
                                             postList.add(postObject)
                                         }
 
 
+
                                     }
 
+
                                 }
+
                             }
-
-
-                        }
-                }
             }
-
         }
+*/
+
+
         fun getPostFriends(){
             //Buraya kullanıcının arkadaşlarına ait postları çekeceğiz.
         }
+
+
 }
