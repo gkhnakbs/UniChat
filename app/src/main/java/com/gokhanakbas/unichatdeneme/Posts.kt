@@ -15,10 +15,7 @@ class Posts(var postUser : String) {
         var postDesc : String=""
         var postTime : String=""
         var postFullName : String=""
-        private var firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
-
-
-        val postList = ArrayList<Posts>()
+        var post_photo : String=""
 
     /*fun getPostSelf(context: Context){
 
@@ -54,12 +51,12 @@ class Posts(var postUser : String) {
                             }
             }
         }
-*/
+
 
 
         fun getPostFriends(){
             //Buraya kullanıcının arkadaşlarına ait postları çekeceğiz.
-        }
+        } */
 
 
 }
