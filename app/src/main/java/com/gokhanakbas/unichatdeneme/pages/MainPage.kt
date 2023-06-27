@@ -18,6 +18,7 @@ class MainPage : AppCompatActivity() {
     private lateinit var recyclerViewAdapter: RecyclerAdapter
     private lateinit var firestore: FirebaseFirestore
     val postList=ArrayList<Posts>()
+    var user_mail : String = ""
      @SuppressLint("NotifyDataSetChanged")
      override fun onCreate(savedInstanceState: Bundle?) {
          super.onCreate(savedInstanceState)
@@ -26,7 +27,7 @@ class MainPage : AppCompatActivity() {
          setContentView(view)
 
          firestore=FirebaseFirestore.getInstance()
-         val user_mail=intent.getStringExtra("user_mail").toString()
+         user_mail=intent.getStringExtra("user_mail").toString()
          val user_post= Posts(user_mail)
          getPostSelf(this)
          recyclerViewAdapter= RecyclerAdapter(postList)
@@ -72,7 +73,10 @@ class MainPage : AppCompatActivity() {
     }
 
     fun profile_page(view : View){
-        val intent=Intent(this,)
+            val intent=Intent(this,User_Profile_Page::class.java)
+            intent.putExtra("user_mail",user_mail)
+            startActivity(intent)
+            finish()
     }
 
 
