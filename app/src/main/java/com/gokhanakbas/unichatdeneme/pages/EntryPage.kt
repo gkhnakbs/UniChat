@@ -1,4 +1,4 @@
-package com.gokhanakbas.unichatdeneme
+package com.gokhanakbas.unichatdeneme.pages
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -26,7 +26,7 @@ class EntryPage : AppCompatActivity() {
         auth=FirebaseAuth.getInstance()
 
         if(auth.currentUser!=null){
-            val intent = Intent(this,MainPage::class.java)
+            val intent = Intent(this, MainPage::class.java)
             intent.putExtra("user_mail",auth.currentUser?.email.toString())
             startActivity(intent)
             finish()
@@ -41,7 +41,7 @@ class EntryPage : AppCompatActivity() {
         if (user_mailText != "" && passwordText != ""){
             auth.signInWithEmailAndPassword(user_mailText,passwordText).addOnCompleteListener {
                     //val guncelKullanici=auth.currentUser?.email.toString()
-                    val intent = Intent(this,MainPage::class.java)
+                    val intent = Intent(this, MainPage::class.java)
                     intent.putExtra("user_mail",user_mailText)
                     startActivity(intent)
                     finish()

@@ -13,7 +13,10 @@
         android:theme="@style/Theme.UniChatDeneme"
         tools:targetApi="31">
         <activity
-            android:name=".EntryPage"
+            android:name=".pages.User_Profile_Page"
+            android:exported="false" />
+        <activity
+            android:name=".pages.EntryPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +25,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainPage"
-            android:exported="true">
-        </activity>
+            android:name=".pages.MainPage"
+            android:exported="true"></activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

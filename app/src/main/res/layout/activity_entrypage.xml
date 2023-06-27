@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#536DFE"
     android:onClick="passReset"
-    tools:context=".EntryPage">
+    tools:context=".pages.EntryPage">
 
     <EditText
         android:id="@+id/usermail_Text"

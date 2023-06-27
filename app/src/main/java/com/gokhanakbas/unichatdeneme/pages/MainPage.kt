@@ -1,17 +1,21 @@
-package com.gokhanakbas.unichatdeneme
+package com.gokhanakbas.unichatdeneme.pages
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.gokhanakbas.unichatdeneme.object_class.Posts
+import com.gokhanakbas.unichatdeneme.adapter.RecyclerAdapter
 import com.gokhanakbas.unichatdeneme.databinding.ActivityMainpageBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
 class MainPage : AppCompatActivity() {
     private lateinit var  binding : ActivityMainpageBinding
-    private lateinit var recyclerViewAdapter:RecyclerAdapter
+    private lateinit var recyclerViewAdapter: RecyclerAdapter
     private lateinit var firestore: FirebaseFirestore
     val postList=ArrayList<Posts>()
      @SuppressLint("NotifyDataSetChanged")
@@ -23,7 +27,7 @@ class MainPage : AppCompatActivity() {
 
          firestore=FirebaseFirestore.getInstance()
          val user_mail=intent.getStringExtra("user_mail").toString()
-         //val user_post= Posts(user_mail)
+         val user_post= Posts(user_mail)
          getPostSelf(this)
          recyclerViewAdapter= RecyclerAdapter(postList)
          val layoutManager= LinearLayoutManager(this)
@@ -65,6 +69,10 @@ class MainPage : AppCompatActivity() {
 
                 }
             }
+    }
+
+    fun profile_page(view : View){
+        val intent=Intent(this,)
     }
 
 

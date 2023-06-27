@@ -7,29 +7,56 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="366dp"
-        android:layout_height="574dp"
+        android:layout_width="411dp"
+        android:layout_height="542dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952"
         tools:itemCount="20"
         tools:listitem="@layout/recycler_view_item" />
 
     <TextView
         android:id="@+id/unichatLabelMainPage"
-        android:layout_width="227dp"
-        android:layout_height="58dp"
+        android:layout_width="168dp"
+        android:layout_height="53dp"
         android:fontFamily="@font/aladin"
         android:text="UNICHAT"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColor="#F19B1A"
-        android:textSize="60sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.016" />
+        app:layout_constraintVertical_bias="0.006" />
+
+    <ImageView
+        android:id="@+id/profile_icon"
+        android:layout_width="64dp"
+        android:layout_height="56dp"
+        android:onClick="profile_page"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/profile_photo" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

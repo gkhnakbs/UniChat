@@ -1,4 +1,4 @@
-package com.gokhanakbas.unichatdeneme
+package com.gokhanakbas.unichatdeneme.object_class
 
 import android.annotation.SuppressLint
 import android.content.Context

@@ -1,8 +1,9 @@
-package com.gokhanakbas.unichatdeneme
+package com.gokhanakbas.unichatdeneme.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.gokhanakbas.unichatdeneme.object_class.Posts
 import com.gokhanakbas.unichatdeneme.databinding.RecyclerViewItemBinding
 import kotlin.collections.ArrayList
 
