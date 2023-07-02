@@ -181,9 +181,11 @@
         android:text="Posts"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.349"
-        tools:layout_editor_absoluteX="59dp" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView3"
@@ -191,8 +193,10 @@
         android:layout_width="409dp"
         android:layout_height="396dp"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/user_graph"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="261dp" />
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/user_graph" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
