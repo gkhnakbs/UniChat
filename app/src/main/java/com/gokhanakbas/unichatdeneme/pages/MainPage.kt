@@ -28,8 +28,9 @@ class MainPage : AppCompatActivity() {
 
          firestore=FirebaseFirestore.getInstance()
          user_mail=intent.getStringExtra("user_mail").toString()
-         val user_post= Posts(user_mail)
+
          getPostSelf(this)
+
          recyclerViewAdapter= RecyclerAdapter(postList)
          val layoutManager= LinearLayoutManager(this)
          binding.recyclerView.layoutManager=layoutManager
@@ -43,7 +44,7 @@ class MainPage : AppCompatActivity() {
 
         //Buraya Firestore dan kullanıcıya ait postları çekeceğiz.
 
-        firestore.collection("Posts").whereEqualTo("post_mail", "gkhn.akbs5050@gmail.com")
+        firestore.collection("Posts").whereEqualTo("post_mail", user_mail)
             .addSnapshotListener { snapshot, exception ->
                 if (exception != null) {
                     Toast.makeText(context,exception.localizedMessage, Toast.LENGTH_LONG).show()
@@ -55,7 +56,7 @@ class MainPage : AppCompatActivity() {
                             postList.clear()
 
                             for (document in documents) {
-                                var postObject = Posts("gkhn.akbs5050@gmail.com")
+                                var postObject = Posts(user_mail)
                                 postObject.postLabel =document.get("post_label") as String
                                 postObject.postDesc =document.get("post_desc") as String
                                 postObject.postTime =document.get("post_time") as String
@@ -76,7 +77,7 @@ class MainPage : AppCompatActivity() {
             val intent=Intent(this,User_Profile_Page::class.java)
             intent.putExtra("user_mail",user_mail)
             startActivity(intent)
-            finish()
+        finish()
     }
 
 

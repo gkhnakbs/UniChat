@@ -29,7 +29,6 @@ class EntryPage : AppCompatActivity() {
             val intent = Intent(this, MainPage::class.java)
             intent.putExtra("user_mail",auth.currentUser?.email.toString())
             startActivity(intent)
-            finish()
         }
 
     }
@@ -44,7 +43,6 @@ class EntryPage : AppCompatActivity() {
                     val intent = Intent(this, MainPage::class.java)
                     intent.putExtra("user_mail",user_mailText)
                     startActivity(intent)
-                    finish()
                 }.addOnFailureListener{
                     Toast.makeText(this.applicationContext,it.localizedMessage,Toast.LENGTH_LONG).show()
             }

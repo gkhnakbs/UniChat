@@ -7,20 +7,20 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="410dp"
-        android:layout_height="539dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/profile_icon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unichatLabelMainPage"
         tools:itemCount="20"
         tools:listitem="@layout/recycler_view_item" />
 
     <TextView
         android:id="@+id/unichatLabelMainPage"
-        android:layout_width="168dp"
+        android:layout_width="0dp"
         android:layout_height="53dp"
+        android:layout_marginEnd="230dp"
         android:fontFamily="@font/aladin"
         android:text="UNICHAT"
         android:textAlignment="viewStart"
@@ -28,15 +28,16 @@
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.008"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.006" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/profile_icon"
-        android:layout_width="64dp"
+        android:layout_width="0dp"
         android:layout_height="56dp"
+        android:layout_marginStart="350dp"
         android:onClick="profile_page"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

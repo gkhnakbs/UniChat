@@ -8,39 +8,6 @@
     tools:context=".pages.User_Profile_Page">
 
     <TextView
-        android:id="@+id/posts_Button3"
-        android:layout_width="0dp"
-        android:layout_height="3dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="50dp"
-        android:background="#000000"
-        android:clickable="false"
-        android:text="_________________________________________________________"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415" />
-
-    <TextView
-        android:id="@+id/Liked_Button"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:onClick="liked_button"
-        android:text="Liked"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.81"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.347" />
-
-    <TextView
         android:id="@+id/unichatLabelMainPage2"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
@@ -174,6 +141,39 @@
         app:layout_constraintVertical_bias="0.244" />
 
     <TextView
+        android:id="@+id/Liked_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:onClick="liked_button"
+        android:text="Liked"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
+
+    <TextView
+        android:id="@+id/posts_Button3"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="50dp"
+        android:background="#000000"
+        android:clickable="false"
+        android:text="_________________________________________________________"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419" />
+
+    <TextView
         android:id="@+id/Posts_Button"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
@@ -182,19 +182,20 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintHorizontal_bias="0.235"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintVertical_bias="0.351" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView3"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="409dp"
-        android:layout_height="396dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="290dp"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/user_graph" />
