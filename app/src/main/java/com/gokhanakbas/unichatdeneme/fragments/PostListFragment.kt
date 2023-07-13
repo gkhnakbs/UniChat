@@ -15,30 +15,33 @@ import com.gokhanakbas.unichatdeneme.databinding.FragmentPostListBinding
 import com.gokhanakbas.unichatdeneme.object_class.Posts
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
-class PostListFragment : Fragment() {
-    val postList=ArrayList<Posts>()
-
-    private lateinit var recyclerViewAdapter: RecyclerAdapter
-    private lateinit var firestore:FirebaseFirestore
-    private lateinit var binding: FragmentPostListBinding
+class PostListFragment() : Fragment() {
+    private lateinit var firestore: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
-    var user_mail=""
+    var user_mail="gkhn.akbs5050@gmail.com"
+    val postList = ArrayList<Posts>()
+    private lateinit var binding: FragmentPostListBinding
+    private lateinit var recyclerViewAdapter : RecyclerAdapter
+
+
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding=FragmentPostListBinding.inflate(requireActivity().layoutInflater)
+
         firestore=FirebaseFirestore.getInstance()
-        binding=FragmentPostListBinding.inflate(layoutInflater)
         auth= FirebaseAuth.getInstance()
-        user_mail= auth.currentUser?.email.toString()
+
         getPostSelf()
 
         recyclerViewAdapter= RecyclerAdapter(postList)
-
         val layoutManager= LinearLayoutManager(activity?.applicationContext)
         binding.recyclerView.layoutManager=layoutManager
         binding.recyclerView.adapter=recyclerViewAdapter
-
-
+        recyclerViewAdapter.notifyDataSetChanged()
     }
 
     override fun onCreateView(
@@ -46,35 +49,40 @@ class PostListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_post_list, container, false)
+        //inflater.inflate(R.layout.fragment_post_list, container, false)
+        return binding.root
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun getPostSelf(){
-
+    fun getPostSelf() {
+        //println("getpostself baş satırı çalışıyor")
         //Buraya Firestore dan kullanıcıya ait postları çekeceğiz.
 
         firestore.collection("Posts").whereEqualTo("post_mail", user_mail)
             .addSnapshotListener { snapshot, exception ->
+
                 if (exception != null) {
-                        Toast.makeText(activity?.applicationContext,"deeee",Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity?.applicationContext, exception.localizedMessage, Toast.LENGTH_LONG).show()
                 } else {
+
+                    //println("snapshot control : "+snapshot?.isEmpty)
                     if (snapshot != null) {
                         if (!snapshot.isEmpty) {
 
                             var documents = snapshot.documents
                             postList.clear()
-
+                            //println("döküman boşmu kontrol : "+documents.isEmpty())
                             for (document in documents) {
                                 var postObject = Posts(user_mail)
-                                postObject.postLabel =document.get("post_label") as String
-                                postObject.postDesc =document.get("post_desc") as String
-                                postObject.postTime =document.get("post_time") as String
-                                postObject.postFullName =document.get("post_FullName") as String
+                                postObject.postLabel = document.get("post_label") as String
+                                postObject.postDesc = document.get("post_desc") as String
+                                postObject.postTime = document.get("post_time") as String
+                                postObject.postFullName = document.get("post_FullName") as String
                                 postList.add(postObject)
+
+                                println(postObject.postLabel)
                             }
-                            println(activity?.applicationContext)
-                            recyclerViewAdapter.notifyDataSetChanged()
+
                         }
 
 
@@ -83,5 +91,4 @@ class PostListFragment : Fragment() {
                 }
             }
     }
-
     }

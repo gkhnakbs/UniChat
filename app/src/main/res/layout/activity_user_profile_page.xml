@@ -10,7 +10,8 @@
     <TextView
         android:id="@+id/unichatLabelMainPage2"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="685dp"
         android:fontFamily="@font/aladin"
         android:text="UNICHAT"
         android:textAlignment="center"
@@ -141,25 +142,12 @@
         app:layout_constraintVertical_bias="0.244" />
 
     <TextView
-        android:id="@+id/Liked_Button"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:onClick="liked_button"
-        android:text="Liked"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.767"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
-
-    <TextView
         android:id="@+id/posts_Button3"
         android:layout_width="0dp"
-        android:layout_height="3dp"
+        android:layout_height="0dp"
         android:layout_marginStart="1dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginBottom="450dp"
         android:background="#000000"
         android:clickable="false"
         android:text="_________________________________________________________"
@@ -171,12 +159,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.419" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/Posts_Button"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="248dp"
+        android:layout_marginBottom="455dp"
         android:onClick="posts_button"
         android:text="Posts"
         android:textSize="24sp"
@@ -187,17 +177,35 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.351" />
 
+    <TextView
+        android:id="@+id/posts_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="248dp"
+        android:layout_marginBottom="455dp"
+        android:onClick="liked_button"
+        android:text="Liked"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.776"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView3"
+        android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="290dp"
-        app:defaultNavHost="true"
+        android:layout_marginTop="285dp"
+        app:defaultNavHost="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.002"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:navGraph="@navigation/user_graph" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

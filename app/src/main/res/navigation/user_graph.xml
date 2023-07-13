@@ -8,7 +8,7 @@
         android:id="@+id/likedPostFragment"
         android:name="com.gokhanakbas.unichatdeneme.fragments.LikedPostFragment"
         android:label="fragment_liked_post"
-        tools:layout="@layout/fragment_liked_post" >
+        tools:layout="@layout/fragment_liked_post">
         <action
             android:id="@+id/action_likedPostFragment_to_postListFragment"
             app:destination="@id/postListFragment"
@@ -21,7 +21,7 @@
         android:id="@+id/postListFragment"
         android:name="com.gokhanakbas.unichatdeneme.fragments.PostListFragment"
         android:label="fragment_post_list"
-        tools:layout="@layout/fragment_post_list" >
+        tools:layout="@layout/fragment_post_list">
         <action
             android:id="@+id/action_postListFragment_to_likedPostFragment"
             app:destination="@id/likedPostFragment"
