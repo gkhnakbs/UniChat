@@ -77,7 +77,7 @@ class MainPage : AppCompatActivity() {
             val intent=Intent(this,User_Profile_Page::class.java)
             intent.putExtra("user_mail",user_mail)
             startActivity(intent)
-            finish()
+
     }
 
 

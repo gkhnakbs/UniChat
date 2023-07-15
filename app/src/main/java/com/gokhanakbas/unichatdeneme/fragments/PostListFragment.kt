@@ -18,10 +18,10 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-class PostListFragment() : Fragment() {
+class PostListFragment(var user_mail : String) : Fragment() {
     private lateinit var firestore: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
-    var user_mail="gkhn.akbs5050@gmail.com"
+
     val postList = ArrayList<Posts>()
     private lateinit var binding: FragmentPostListBinding
     private lateinit var recyclerViewAdapter : RecyclerAdapter
@@ -30,18 +30,19 @@ class PostListFragment() : Fragment() {
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=FragmentPostListBinding.inflate(requireActivity().layoutInflater)
-
+        binding=FragmentPostListBinding.inflate(layoutInflater)
         firestore=FirebaseFirestore.getInstance()
         auth= FirebaseAuth.getInstance()
 
         getPostSelf()
 
-        recyclerViewAdapter= RecyclerAdapter(postList)
-        val layoutManager= LinearLayoutManager(activity?.applicationContext)
-        binding.recyclerView.layoutManager=layoutManager
-        binding.recyclerView.adapter=recyclerViewAdapter
+        recyclerViewAdapter = RecyclerAdapter(postList)
+
+        val layoutManager = LinearLayoutManager(activity?.applicationContext)
+        binding.recyclerView.layoutManager = layoutManager
+        binding.recyclerView.adapter = recyclerViewAdapter
         recyclerViewAdapter.notifyDataSetChanged()
+
     }
 
     override fun onCreateView(
@@ -49,13 +50,13 @@ class PostListFragment() : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        //inflater.inflate(R.layout.fragment_post_list, container, false)
+        //binding = FragmentPostListBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
     @SuppressLint("NotifyDataSetChanged")
     fun getPostSelf() {
-        //println("getpostself baş satırı çalışıyor")
         //Buraya Firestore dan kullanıcıya ait postları çekeceğiz.
 
         firestore.collection("Posts").whereEqualTo("post_mail", user_mail)
@@ -65,13 +66,11 @@ class PostListFragment() : Fragment() {
                     Toast.makeText(activity?.applicationContext, exception.localizedMessage, Toast.LENGTH_LONG).show()
                 } else {
 
-                    //println("snapshot control : "+snapshot?.isEmpty)
                     if (snapshot != null) {
                         if (!snapshot.isEmpty) {
 
                             var documents = snapshot.documents
                             postList.clear()
-                            //println("döküman boşmu kontrol : "+documents.isEmpty())
                             for (document in documents) {
                                 var postObject = Posts(user_mail)
                                 postObject.postLabel = document.get("post_label") as String
@@ -79,10 +78,8 @@ class PostListFragment() : Fragment() {
                                 postObject.postTime = document.get("post_time") as String
                                 postObject.postFullName = document.get("post_FullName") as String
                                 postList.add(postObject)
-
-                                println(postObject.postLabel)
                             }
-
+                            recyclerViewAdapter.notifyDataSetChanged()
                         }
 
 

@@ -20,7 +20,8 @@
         android:id="@+id/unichatLabelMainPage"
         android:layout_width="0dp"
         android:layout_height="53dp"
-        android:layout_marginEnd="230dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="220dp"
         android:fontFamily="@font/aladin"
         android:text="UNICHAT"
         android:textAlignment="viewStart"
@@ -36,15 +37,13 @@
     <ImageView
         android:id="@+id/profile_icon"
         android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="350dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="340dp"
         android:onClick="profile_page"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
         app:srcCompat="@drawable/user_profile_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

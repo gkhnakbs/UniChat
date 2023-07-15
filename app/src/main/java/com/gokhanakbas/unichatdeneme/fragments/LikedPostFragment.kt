@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.gokhanakbas.unichatdeneme.R
 
-class LikedPostFragment : Fragment() {
+class LikedPostFragment(var user_mail : String) : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
