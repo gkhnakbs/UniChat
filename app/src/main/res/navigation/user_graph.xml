@@ -10,12 +10,8 @@
         android:label="fragment_liked_post"
         tools:layout="@layout/fragment_liked_post">
         <action
-            android:id="@+id/action_likedPostFragment_to_postListFragment"
-            app:destination="@id/postListFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_enter_anim"
-            app:popExitAnim="@anim/nav_default_exit_anim" />
+            android:id="@+id/action_likedPostFragment_to_postListFragment2"
+            app:destination="@id/postListFragment" />
     </fragment>
     <fragment
         android:id="@+id/postListFragment"
@@ -23,10 +19,7 @@
         android:label="fragment_post_list"
         tools:layout="@layout/fragment_post_list">
         <action
-            android:id="@+id/action_postListFragment_to_likedPostFragment"
-            app:destination="@id/likedPostFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_enter_anim" />
+            android:id="@+id/action_postListFragment_to_likedPostFragment2"
+            app:destination="@id/likedPostFragment" />
     </fragment>
 </navigation>

@@ -30,18 +30,16 @@ class PostListFragment(var user_mail : String) : Fragment() {
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=FragmentPostListBinding.inflate(layoutInflater)
         firestore=FirebaseFirestore.getInstance()
         auth= FirebaseAuth.getInstance()
 
         getPostSelf()
-
         recyclerViewAdapter = RecyclerAdapter(postList)
-
         val layoutManager = LinearLayoutManager(activity?.applicationContext)
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = recyclerViewAdapter
         recyclerViewAdapter.notifyDataSetChanged()
+
 
     }
 
@@ -50,8 +48,8 @@ class PostListFragment(var user_mail : String) : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        //binding = FragmentPostListBinding.inflate(inflater, container, false)
-
+        // inflater.inflate(R.layout.fragment_post_list, container, false)
+        binding = FragmentPostListBinding.inflate(inflater, container, false)
         return binding.root
     }
 
