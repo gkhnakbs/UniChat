@@ -33,11 +33,14 @@ class PostListFragment(var user_mail : String) : Fragment() {
         firestore=FirebaseFirestore.getInstance()
         auth= FirebaseAuth.getInstance()
 
+        binding= FragmentPostListBinding.inflate(layoutInflater)
+
         getPostSelf()
         recyclerViewAdapter = RecyclerAdapter(postList)
         val layoutManager = LinearLayoutManager(activity?.applicationContext)
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = recyclerViewAdapter
+
         recyclerViewAdapter.notifyDataSetChanged()
 
 
@@ -49,7 +52,8 @@ class PostListFragment(var user_mail : String) : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         // inflater.inflate(R.layout.fragment_post_list, container, false)
-        binding = FragmentPostListBinding.inflate(inflater, container, false)
+        //binding = FragmentPostListBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 

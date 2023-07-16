@@ -10,7 +10,7 @@
         android:label="fragment_liked_post"
         tools:layout="@layout/fragment_liked_post">
         <action
-            android:id="@+id/action_likedPostFragment_to_postListFragment2"
+            android:id="@+id/action_likedPostFragment_to_postListFragment"
             app:destination="@id/postListFragment" />
     </fragment>
     <fragment
@@ -19,7 +19,7 @@
         android:label="fragment_post_list"
         tools:layout="@layout/fragment_post_list">
         <action
-            android:id="@+id/action_postListFragment_to_likedPostFragment2"
+            android:id="@+id/action_postListFragment_to_likedPostFragment"
             app:destination="@id/likedPostFragment" />
     </fragment>
 </navigation>

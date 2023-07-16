@@ -31,10 +31,10 @@ class User_Profile_Page : AppCompatActivity() {
             supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.fragmentContainerView,fragment)
-                .commit()
-/*
-            val action= PostListFragmentDirections.actionPostListFragmentToLikedPostFragment2()
-            Navigation.findNavController(binding.fragmentContainerView3).navigate(action)*/
+                .commit() /*
+            val action= LikedPostFragmentDirections.actionLikedPostFragmentToPostListFragment()
+            Navigation.findNavController(binding.fragmentContainerView).navigate(action)
+            */
             fragmentStatus=0
             }
     }
@@ -46,9 +46,10 @@ class User_Profile_Page : AppCompatActivity() {
                 .beginTransaction()
                 .replace(R.id.fragmentContainerView,fragment)
                 .commit()
+
 /*
-            val action= LikedPostFragmentDirections.actionLikedPostFragmentToPostListFragment2()
-            Navigation.findNavController(binding.fragmentContainerView3).navigate(action)*/
+            val action= PostListFragmentDirections.actionPostListFragmentToLikedPostFragment()
+            Navigation.findNavController(binding.fragmentContainerView).navigate(action)*/
             fragmentStatus=1
         }
     }
