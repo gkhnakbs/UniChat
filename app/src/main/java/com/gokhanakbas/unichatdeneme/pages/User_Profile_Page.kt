@@ -13,7 +13,7 @@ import com.gokhanakbas.unichatdeneme.fragments.PostListFragmentDirections
 
 class User_Profile_Page : AppCompatActivity() {
     private lateinit var binding : ActivityUserProfilePageBinding
-    private var fragmentStatus : Int =0
+    private var fragmentStatus : Int =1
     var user_mail =""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +22,7 @@ class User_Profile_Page : AppCompatActivity() {
         val view=binding.root
         setContentView(view)
         user_mail=intent.getStringExtra("user_mail").toString()
+        posts_button(view)
 
     }
     fun posts_button(view: View){

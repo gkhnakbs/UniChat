@@ -3,7 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#dde9f1">
+
+    <Button
+        android:id="@+id/mainpagebutton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#75bde0"
+        android:text="Main Page"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/interestpagebutton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/unichatLabelMainPage" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -12,24 +28,21 @@
         app:layout_constraintBottom_toTopOf="@+id/profile_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/unichatLabelMainPage"
-        tools:itemCount="20"
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        tools:itemCount="40"
         tools:listitem="@layout/recycler_view_item" />
 
     <TextView
         android:id="@+id/unichatLabelMainPage"
-        android:layout_width="0dp"
-        android:layout_height="53dp"
+        android:layout_width="157dp"
+        android:layout_height="45dp"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="220dp"
-        android:fontFamily="@font/aladin"
-        android:text="UNICHAT"
+        android:fontFamily="@font/roboto_condensed_bold"
+        android:text="SocialUni"
         android:textAlignment="viewStart"
-        android:textColor="#F19B1A"
-        android:textSize="48sp"
+        android:textColor="#75bde0"
+        android:textSize="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.008"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -45,5 +58,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
         app:srcCompat="@drawable/user_profile_icon" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.17" />
+
+    <Button
+        android:id="@+id/interestpagebutton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#75bde0"
+        android:text="Interest"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/mainpagebutton"
+        app:layout_constraintTop_toTopOf="@+id/mainpagebutton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

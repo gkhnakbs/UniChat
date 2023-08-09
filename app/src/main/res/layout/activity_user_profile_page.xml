@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#dde9f1"
     android:textDirection="locale"
-    tools:context=".pages.User_Profile_Page"
 
-    >
+    tools:context=".pages.User_Profile_Page">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -15,48 +15,37 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
 
         <Button
             android:id="@+id/edit_profile_button2"
             android:layout_width="131dp"
             android:layout_height="53dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#75bde0"
             android:text="Something"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.026"
+            app:layout_constraintBottom_toTopOf="@+id/Posts_Button"
+            app:layout_constraintEnd_toStartOf="@+id/edit_profile_button"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.775" />
+            app:layout_constraintTop_toTopOf="@+id/edit_profile_button" />
 
         <TextView
             android:id="@+id/unichatLabelMainPage2"
             android:layout_width="164dp"
             android:layout_height="45dp"
-            android:fontFamily="@font/aladin"
-            android:text="UNICHAT"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:text="SocialUni"
             android:textAlignment="center"
-            android:textColor="#F19B1A"
-            android:textSize="42sp"
+            android:textColor="#75bde0"
+            android:textSize="36dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="125dp"
-            android:layout_height="117dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.026"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.327"
-            tools:src="@tools:sample/avatars"
-            tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/user_followers_count"
@@ -64,7 +53,7 @@
             android:layout_height="35dp"
             android:layout_marginTop="12dp"
             android:text="11"
-            android:textSize="25sp"
+            android:textSize="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.673"
             app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +65,7 @@
             android:layout_height="35dp"
             android:layout_marginTop="12dp"
             android:text="123"
-            android:textSize="25sp"
+            android:textSize="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.928"
             app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +77,7 @@
             android:layout_height="35dp"
             android:layout_marginTop="12dp"
             android:text="12"
-            android:textSize="25sp"
+            android:textSize="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.449"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +89,7 @@
             android:layout_height="29dp"
             android:fontFamily="serif"
             android:text="Followers"
-            android:textSize="18sp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.704"
@@ -114,7 +103,7 @@
             android:layout_height="29dp"
             android:fontFamily="serif"
             android:text="Posts"
-            android:textSize="18sp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.439"
@@ -128,7 +117,7 @@
             android:layout_height="29dp"
             android:fontFamily="serif"
             android:text="Follow"
-            android:textSize="18sp"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.952"
@@ -140,25 +129,27 @@
             android:id="@+id/edit_profile_button"
             android:layout_width="131dp"
             android:layout_height="53dp"
+            android:backgroundTint="#75bde0"
             android:text="Edit Your Profile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.541"
+            app:layout_constraintHorizontal_bias="0.583"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.78" />
+            app:layout_constraintVertical_bias="0.763" />
 
         <Button
             android:id="@+id/share_profile_button"
-            android:layout_width="110dp"
+            android:layout_width="108dp"
             android:layout_height="53dp"
+            android:backgroundTint="#75bde0"
             android:text="Share"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.775" />
+            app:layout_constraintVertical_bias="0.763" />
 
         <TextView
             android:id="@+id/post_liked_underline"
@@ -183,7 +174,7 @@
             android:onClick="posts_button"
             android:text="Posts"
             android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.208"
@@ -197,13 +188,35 @@
             android:onClick="liked_button"
             android:text="Liked"
             android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.776"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="113dp"
+            android:layout_height="114dp"
+            android:layout_margin="5dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="57dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.057"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.322">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/eminkafa" />
+
+        </androidx.cardview.widget.CardView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
